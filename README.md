@@ -8,6 +8,7 @@ This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3
  2. pnpm install && cd server && pnpm install && cd ..
  3. docker-compose up
  4. pnpm start
+ 5. go to localhost:3000 
 
  Sample test data:
 
