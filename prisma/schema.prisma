@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Forcast{
+id String @id @default(auto()) @map("_id") @db.ObjectId
+location Location?
+daily Json?
+
+}
+
+model Location {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  location  String 
+  latitude  String @unique
+  longitude String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  forcast Forcast @relation(fields: [forcastId], references: [id], onDelete: Cascade)
+  forcastId String @unique @db.ObjectId
+
+}

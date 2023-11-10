@@ -1,0 +1,11 @@
+{
+    "forecast_days":10,
+    "minimum_threshold":20,
+    "maximum_threshold":35,
+    "default":{
+        "latitude": "51.509865",
+        "longitude": "-0.118092",
+        "location": "London, UK"
+    },
+    "radius":5
+}
